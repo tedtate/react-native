@@ -108,9 +108,7 @@ var TabBarItemIOS = React.createClass({
       tabContents = <View />;
     }
 
-    var icon = this.props.systemIcon || (
-      this.props.icon && this.props.icon.uri
-    );
+    var icon = this.props.systemIcon || this.props.icon;
 
     var badge = typeof this.props.badge === 'number' ?
       '' + this.props.badge :
@@ -119,7 +117,7 @@ var TabBarItemIOS = React.createClass({
     return (
       <RCTTabBarItem
         icon={icon}
-        selectedIcon={this.props.selectedIcon && this.props.selectedIcon.uri}
+        selectedIcon={this.props.selectedIcon}
         onPress={this.props.onPress}
         selected={this.props.selected}
         badge={badge}
